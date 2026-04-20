@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joana Olori — Growth Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --black:#0c0c0c;
+  --purple:#5b3fff;
+  --purple-l:#eeeaff;
+  --pink:#ff3d8a;
+  --grad:linear-gradient(135deg,#5b3fff 0%,#ff3d8a 100%);
+  --text:#1a1828;
+  --muted:#7a7a9a;
+  --border:#e6e4f0;
+  --r:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--purple)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(91,63,255,.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:700px;position:relative}
+.hero-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);background:var(--purple-l);padding:.35rem 1rem;border-radius:999px;margin-bottom:1.5rem}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,7vw,4.5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.2rem}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-desc{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;font-weight:300;line-height:1.7}
+.hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--grad);color:white;text-decoration:none;padding:.85rem 2rem;border-radius:999px;font-weight:600;font-size:.9rem;transition:opacity .2s,transform .15s}
+.hero-cta:hover{opacity:.9;transform:translateY(-2px)}
+.hero-stats{display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .lbl{font-size:.78rem;color:var(--muted);font-weight:500;margin-top:.1rem}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:980px;margin:0 auto}
+.section-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);background:var(--purple-l);padding:.25rem .7rem;border-radius:999px;margin-bottom:.8rem}
+.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.03em;margin-bottom:.6rem}
+.section-desc{font-size:.95rem;color:var(--muted);max-width:560px;font-weight:300;margin-bottom:2.5rem;line-height:1.7}
+
+/* SYSTEM SECTION */
+.system-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.system-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;transition:border-color .2s,box-shadow .2s}
+.system-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
+.system-card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;flex-shrink:0}
+.system-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+.system-card p{font-size:.83rem;color:var(--muted);line-height:1.6}
+.system-card .tech-row{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.8rem}
+.tech-tag{font-size:.65rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;background:var(--purple-l);color:var(--purple)}
+
+/* FLOWS */
+.flows-list{display:flex;flex-direction:column;gap:.8rem}
+.flow-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;display:flex;align-items:flex-start;gap:1rem}
+.flow-num{width:28px;height:28px;border-radius:8px;background:var(--grad);color:white;font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.flow-content h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:.3rem}
+.flow-content p{font-size:.82rem;color:var(--muted);line-height:1.55}
+.flow-content .flow-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}
+.flow-tag{font-size:.62rem;font-weight:600;padding:.18rem .5rem;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+
+/* TOOLS */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.tool-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.tool-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
+.tool-preview{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.tool-preview-1{background:linear-gradient(135deg,#eeeaff,#fff0f6)}
+.tool-preview-2{background:linear-gradient(135deg,#e8f5e9,#e3f2fd)}
+.tool-preview-3{background:linear-gradient(135deg,#fff3e0,#fce4ec)}
+.tool-mockup{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:180px;background:white;border-radius:12px 12px 0 0;padding:12px;border:1px solid var(--border);border-bottom:none;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+.tool-mockup-bar{height:6px;background:var(--grad);border-radius:3px;margin-bottom:8px;width:60%}
+.tool-mockup-line{height:4px;background:#e8e8f0;border-radius:2px;margin-bottom:5px}
+.tool-mockup-line.w80{width:80%}
+.tool-mockup-line.w60{width:60%}
+.tool-mockup-line.w40{width:40%}
+.tool-body{padding:1.2rem}
+.tool-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+.tool-body p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.8rem}
+.tool-body .tool-stack{display:flex;gap:.3rem;flex-wrap:wrap}
+.tool-stack-item{font-size:.62rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;background:#f0f0f8;color:var(--muted);border:1px solid var(--border)}
+
+/* EXPERIMENTS */
+.exp-preview{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1rem}
+.exp-preview-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.exp-preview-header h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem}
+.exp-count-badge{font-size:.72rem;font-weight:600;color:var(--purple);background:var(--purple-l);padding:.25rem .7rem;border-radius:999px}
+.exp-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
+.exp-channel{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.8rem;text-align:center}
+.exp-channel .ch-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.exp-channel .ch-label{font-size:.72rem;color:var(--muted);font-weight:500;margin-top:.1rem}
+
+/* 90 DAYS */
+.days-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:600px){.days-grid{grid-template-columns:1fr}}
+.day-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;position:relative;overflow:hidden}
+.day-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.day-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}
+.day-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.8rem}
+.day-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.day-items li{font-size:.82rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.5}
+.day-items li::before{content:'→';position:absolute;left:0;color:var(--purple);font-weight:600}
+
+/* FOOTER */
+footer{background:var(--black);color:rgba(255,255,255,.5);padding:2.5rem 2rem;text-align:center}
+footer .footer-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.4rem}
+footer p{font-size:.82rem}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);max-width:980px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Joana Olori</span>
+  <ul class="nav-links">
+    <li><a href="#system">System</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#experiments">Experiments</a></li>
+    <li><a href="#90days">90 Days</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Senior Growth Marketing — Photoroom</div>
+    <h1>Built to ship.<br><span class="grad">Built to grow.</span></h1>
+    <p class="hero-desc">I didn't just prepare for this interview — I built the growth infrastructure. Here's what I shipped in 5 days using Claude, n8n, Notion, GrowthBook and Amplitude.</p>
+    <a href="#system" class="hero-cta">See what I built →</a>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">4</div><div class="lbl">n8n automations</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">Live growth tools</div></div>
+      <div class="hero-stat"><div class="num">50</div><div class="lbl">Experiment backlog</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">Notion databases</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SYSTEM -->
+<section id="system">
+  <div class="container">
+    <div class="section-tag">Ops infrastructure</div>
+    <h2 class="section-title">A full growth experimentation system</h2>
+    <p class="section-desc">Built end-to-end: from idea submission to experiment launch to results tracking. Every step automated.</p>
+    <div class="system-grid">
+      <div class="system-card">
+        <div class="system-card-icon" style="background:#eeeaff">💡</div>
+        <h3>Idea Library</h3>
+        <p>Free-form idea collection with Funnel Stage tagging. "Move to Backlog" checkbox triggers automatic n8n flow to Experiment Backlog.</p>
+        <div class="tech-row"><span class="tech-tag">Notion API</span><span class="tech-tag">Node.js</span></div>
+      </div>
+      <div class="system-card">
+        <div class="system-card-icon" style="background:#e8f5e9">🎯</div>
+        <h3>Experiment Backlog</h3>
+        <p>ICE scoring with auto-calculated priority. Formula: Impact × Confidence × Ease. Status: Idea → In Review → Approved → triggers Active Experiments.</p>
+        <div class="tech-row"><span class="tech-tag">Notion Formula</span><span class="tech-tag">ICE scoring</span></div>
+      </div>
+      <div class="system-card">
+        <div class="system-card-icon" style="background:#fff0f6">🧪</div>
+        <h3>Active Experiments</h3>
+        <p>15-property tracking database. Trigger fields validated by n8n. Results fields auto-populated. 4 views: Pipeline, By Status (Kanban), Results, Learnings Library.</p>
+        <div class="tech-row"><span class="tech-tag">15 properties</span><span class="tech-tag">4 views</span><span class="tech-tag">Page template</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLOWS -->
+<section style="padding:5rem 2rem;background:var(--white)">
+  <div class="container">
+    <div class="section-tag">Automation</div>
+    <h2 class="section-title">4 n8n workflows — fully automated</h2>
+    <p class="section-desc">Every handoff between systems is automated. No manual status updates, no missed experiments.</p>
+    <div class="flows-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h4>Idea Library → Experiment Backlog</h4>
+          <p>Trigger: "Move to Backlog" checkbox = true. Auto-creates Backlog entry with mapped fields (Hypothesis, Funnel Stage, Status = Idea). Polling: every 1 min.</p>
+          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Filter node</span><span class="flow-tag">HTTP POST /v1/pages</span></div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h4>Backlog Approved → Active Experiments</h4>
+          <p>Trigger: Status = "Approved". Auto-creates Active Experiment entry with Status = "Ready to Launch". Copies Hypothesis and Funnel Stage.</p>
+          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Filter node</span><span class="flow-tag">HTTP POST /v1/pages</span></div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h4>Intake Validator + Email</h4>
+          <p>Trigger: any update to Active Experiments. If-node: checks 8 required fields (Hypothesis, Primary KPI, Funnel Stage, Review Date, Status not in terminal states). True: Status → "Ready to Launch". False: Status → "Needs Info" + Gmail email to owner with missing fields.</p>
+          <div class="flow-tags"><span class="flow-tag">If node (8 conditions)</span><span class="flow-tag">Notion Update</span><span class="flow-tag">Gmail OAuth2</span><span class="flow-tag">Google Cloud Console</span></div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h4>GrowthBook → Notion Sync</h4>
+          <p>Schedule trigger (every 5 min). GET GrowthBook API /api/v1/experiments. Code node extracts experiment ID, name, status. POST Notion database query to find matching entry by name. PATCH Notion page: Status = "Running", GrowthBook ID, Start Date = now.</p>
+          <div class="flow-tags"><span class="flow-tag">Schedule Trigger</span><span class="flow-tag">GrowthBook API</span><span class="flow-tag">Code (JS)</span><span class="flow-tag">Notion query + patch</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="container">
+    <div class="section-tag">Growth assets</div>
+    <h2 class="section-title">3 free tools — built to convert</h2>
+    <p class="section-desc">Each tool delivers immediate value to Photoroom's SMB audience and drives users into the app. Zero friction, instant Aha moment.</p>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-preview tool-preview-1">
+          <div class="tool-mockup">
+            <div class="tool-mockup-bar"></div>
+            <div class="tool-mockup-line w80"></div>
+            <div class="tool-mockup-line w60"></div>
+            <div class="tool-mockup-line w40"></div>
+          </div>
+        </div>
+        <div class="tool-body">
+          <h3>SEO Description Generator</h3>
+          <p>Product name + category + keywords → AI-generated SEO meta description. n8n webhook backend with Claude Sonnet. Photoroom CTA embedded.</p>
+          <div class="tool-stack">
+            <span class="tool-stack-item">HTML/JS</span>
+            <span class="tool-stack-item">n8n webhook</span>
+            <span class="tool-stack-item">Anthropic node</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-preview tool-preview-2">
+          <div class="tool-mockup">
+            <div class="tool-mockup-bar"></div>
+            <div class="tool-mockup-line w80"></div>
+            <div class="tool-mockup-line w60"></div>
+            <div class="tool-mockup-line w40"></div>
+          </div>
+        </div>
+        <div class="tool-body">
+          <h3>Product Copy Generator</h3>
+          <p>Product URL → SEO description, Meta ad copy, Instagram caption, eBay/Amazon listing. Claude extracts product info from URL and returns structured JSON. API key secured in n8n backend.</p>
+          <div class="tool-stack">
+            <span class="tool-stack-item">HTML/JS</span>
+            <span class="tool-stack-item">n8n webhook</span>
+            <span class="tool-stack-item">JSON parsing</span>
+            <span class="tool-stack-item">4 copy cards</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-preview tool-preview-3">
+          <div class="tool-mockup">
+            <div class="tool-mockup-bar"></div>
+            <div class="tool-mockup-line w80"></div>
+            <div class="tool-mockup-line w60"></div>
+            <div class="tool-mockup-line w40"></div>
+          </div>
+        </div>
+        <div class="tool-body">
+          <h3>Product Visual Generator</h3>
+          <p>Product URL + optional image upload → Instagram Ad, Facebook Ad, eBay listing mockups with watermark + generated copy. PLG mechanic: watermark drives upgrade to Photoroom.</p>
+          <div class="tool-stack">
+            <span class="tool-stack-item">FileReader API</span>
+            <span class="tool-stack-item">3 mockups</span>
+            <span class="tool-stack-item">Watermark CTA</span>
+            <span class="tool-stack-item">PLG funnel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIMENTS -->
+<section id="experiments" style="background:var(--white);padding:5rem 2rem">
+  <div class="container">
+    <div class="section-tag">Strategy</div>
+    <h2 class="section-title">50-experiment growth backlog</h2>
+    <p class="section-desc">High-velocity experiment backlog covering every acquisition channel. Prioritised by ICE score. Ready to ship week 1.</p>
+    <div class="exp-preview">
+      <div class="exp-preview-header">
+        <h3>Experiments by channel</h3>
+        <span class="exp-count-badge">50 total</span>
+      </div>
+      <div class="exp-channels">
+        <div class="exp-channel"><div class="ch-num">18</div><div class="ch-label">Acquisition</div></div>
+        <div class="exp-channel"><div class="ch-num">12</div><div class="ch-label">Conversion</div></div>
+        <div class="exp-channel"><div class="ch-num">8</div><div class="ch-label">Retention</div></div>
+        <div class="exp-channel"><div class="ch-num">7</div><div class="ch-label">Viral / PLG</div></div>
+        <div class="exp-channel"><div class="ch-num">5</div><div class="ch-label">Partnerships</div></div>
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:.8rem;">Top experiments by ICE score: Programmatic SEO pages per product category (756) · Upsell prompt after 3rd export (630) · Shopify App Store listing optimisation (672) · One-click background removal as lead gen (756)</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 90 DAYS -->
+<section id="90days">
+  <div class="container">
+    <div class="section-tag">Plan</div>
+    <h2 class="section-title">First 90 days</h2>
+    <p class="section-desc">How I'd approach the role from day one — focused on learning first, building second.</p>
+    <div class="days-grid">
+      <div class="day-card">
+        <div class="day-label">Days 1–30</div>
+        <h3>Learn & audit</h3>
+        <ul class="day-items">
+          <li>Audit current Amplitude event taxonomy and tracking gaps</li>
+          <li>Map full PLG funnel: where do users drop off today?</li>
+          <li>Interview 5 SMB customers to understand their workflow</li>
+          <li>Review top 10 existing experiments and learnings</li>
+          <li>Identify top 3 quick-win acquisition channels</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-label">Days 31–60</div>
+        <h3>Build & launch</h3>
+        <ul class="day-items">
+          <li>Ship first 10 experiments from backlog</li>
+          <li>Launch programmatic SEO pages for top 5 product categories</li>
+          <li>Deploy upsell prompt A/B test (3rd export trigger)</li>
+          <li>Build activation dashboard in Amplitude</li>
+          <li>Establish weekly experiment review cadence</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-label">Days 61–90</div>
+        <h3>Scale winners</h3>
+        <ul class="day-items">
+          <li>Double down on top 3 performing experiments</li>
+          <li>Launch referral loop for reseller segment</li>
+          <li>Ship Shopify / WooCommerce integration</li>
+          <li>Present first monthly growth report with attribution data</li>
+          <li>Build 10+ experiments/month cadence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Joana Olori</div>
+  <p>Senior Growth Marketing — built for Photoroom · April 2026</p>
+</footer>
+
+</body>
+</html>
