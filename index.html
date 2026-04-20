@@ -24,39 +24,90 @@ html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,248,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 2rem;
+  display:flex;align-items:center;justify-content:space-between
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+.nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
 .nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--purple)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(91,63,255,.06) 0%,transparent 70%);pointer-events:none}
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden
+}
+.hero::before{
+  content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+  width:800px;height:800px;
+  background:radial-gradient(circle,rgba(91,63,255,.06) 0%,transparent 70%);
+  pointer-events:none
+}
 .hero-inner{max-width:700px;position:relative}
-.hero-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);background:var(--purple-l);padding:.35rem 1rem;border-radius:999px;margin-bottom:1.5rem}
-.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,7vw,4.5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.2rem}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--purple);
+  background:var(--purple-l);padding:.35rem 1rem;border-radius:999px;margin-bottom:1.5rem
+}
+.hero h1{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,7vw,4.5rem);
+  letter-spacing:-.04em;line-height:1.05;margin-bottom:1.2rem
+}
 .hero h1 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-desc{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;font-weight:300;line-height:1.7}
-.hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--grad);color:white;text-decoration:none;padding:.85rem 2rem;border-radius:999px;font-weight:600;font-size:.9rem;transition:opacity .2s,transform .15s}
+.hero-desc{
+  font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;
+  font-weight:300;line-height:1.7
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:.5rem;background:var(--grad);
+  color:white;text-decoration:none;padding:.85rem 2rem;border-radius:999px;
+  font-weight:600;font-size:.9rem;transition:opacity .2s,transform .15s
+}
 .hero-cta:hover{opacity:.9;transform:translateY(-2px)}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
 .hero-stat{text-align:center}
-.hero-stat .num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
 .hero-stat .lbl{font-size:.78rem;color:var(--muted);font-weight:500;margin-top:.1rem}
 
 /* SECTIONS */
 section{padding:5rem 2rem}
-.container{max-width:980px;margin:0 auto}
-.section-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);background:var(--purple-l);padding:.25rem .7rem;border-radius:999px;margin-bottom:.8rem}
-.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.03em;margin-bottom:.6rem}
-.section-desc{font-size:.95rem;color:var(--muted);max-width:560px;font-weight:300;margin-bottom:2.5rem;line-height:1.7}
+.container{max-width:1100px;margin:0 auto}
+.section-tag{
+  display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--purple);
+  background:var(--purple-l);padding:.25rem .7rem;border-radius:999px;margin-bottom:.8rem
+}
+.section-title{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);
+  letter-spacing:-.03em;margin-bottom:.6rem
+}
+.section-desc{
+  font-size:.95rem;color:var(--muted);max-width:620px;font-weight:300;
+  margin-bottom:2.5rem;line-height:1.7
+}
 
 /* SYSTEM SECTION */
 .system-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-.system-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;transition:border-color .2s,box-shadow .2s}
+.system-card{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.5rem;transition:border-color .2s,box-shadow .2s
+}
 .system-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
-.system-card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;flex-shrink:0}
+.system-card-icon{
+  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:1.2rem;margin-bottom:1rem;flex-shrink:0
+}
 .system-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}
 .system-card p{font-size:.83rem;color:var(--muted);line-height:1.6}
 .system-card .tech-row{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.8rem}
@@ -64,61 +115,186 @@ section{padding:5rem 2rem}
 
 /* FLOWS */
 .flows-list{display:flex;flex-direction:column;gap:.8rem}
-.flow-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;display:flex;align-items:flex-start;gap:1rem}
-.flow-num{width:28px;height:28px;border-radius:8px;background:var(--grad);color:white;font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.flow-item{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.2rem 1.4rem;display:flex;align-items:flex-start;gap:1rem
+}
+.flow-num{
+  width:28px;height:28px;border-radius:8px;background:var(--grad);color:white;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px
+}
 .flow-content h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:.3rem}
 .flow-content p{font-size:.82rem;color:var(--muted);line-height:1.55}
 .flow-content .flow-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}
-.flow-tag{font-size:.62rem;font-weight:600;padding:.18rem .5rem;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.flow-tag{
+  font-size:.62rem;font-weight:600;padding:.18rem .5rem;border-radius:999px;
+  border:1px solid var(--border);color:var(--muted)
+}
+
+/* VISUAL PROOF SECTION */
+.visual-section{background:var(--white)}
+.visual-group{margin-top:2.25rem}
+.visual-group:first-of-type{margin-top:0}
+.visual-group-head{
+  display:flex;align-items:end;justify-content:space-between;gap:1rem;
+  margin-bottom:1rem;flex-wrap:wrap
+}
+.visual-group-title{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.02em
+}
+.visual-group-copy{
+  font-size:.86rem;color:var(--muted);max-width:680px
+}
+.visual-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.visual-grid.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+.visual-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:1rem;
+  box-shadow:0 6px 24px rgba(17,17,26,.04)
+}
+.visual-label{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--purple);
+  background:var(--purple-l);
+  padding:.32rem .65rem;
+  border-radius:999px;
+  margin-bottom:.8rem
+}
+.visual-card h4{
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  font-size:.95rem;
+  margin-bottom:.3rem
+}
+.visual-card p{
+  font-size:.82rem;
+  color:var(--muted);
+  line-height:1.55;
+  margin-bottom:.85rem
+}
+.visual-shot-wrap{
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  background:#fff
+}
+.visual-shot{
+  width:100%;
+  display:block;
+  height:auto
+}
 
 /* TOOLS */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
-.tool-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.tool-card{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;transition:border-color .2s,box-shadow .2s
+}
 .tool-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
-.tool-preview{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
-.tool-preview-1{background:linear-gradient(135deg,#eeeaff,#fff0f6)}
-.tool-preview-2{background:linear-gradient(135deg,#e8f5e9,#e3f2fd)}
-.tool-preview-3{background:linear-gradient(135deg,#fff3e0,#fce4ec)}
-.tool-mockup{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:180px;background:white;border-radius:12px 12px 0 0;padding:12px;border:1px solid var(--border);border-bottom:none;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
-.tool-mockup-bar{height:6px;background:var(--grad);border-radius:3px;margin-bottom:8px;width:60%}
-.tool-mockup-line{height:4px;background:#e8e8f0;border-radius:2px;margin-bottom:5px}
-.tool-mockup-line.w80{width:80%}
-.tool-mockup-line.w60{width:60%}
-.tool-mockup-line.w40{width:40%}
+.tool-preview{
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:3rem;
+  position:relative;
+  overflow:hidden;
+  background:#f6f5fb
+}
+.tool-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s ease
+}
+.tool-card:hover .tool-preview img{transform:scale(1.02)}
 .tool-body{padding:1.2rem}
 .tool-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}
 .tool-body p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.8rem}
 .tool-body .tool-stack{display:flex;gap:.3rem;flex-wrap:wrap}
-.tool-stack-item{font-size:.62rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;background:#f0f0f8;color:var(--muted);border:1px solid var(--border)}
+.tool-stack-item{
+  font-size:.62rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;
+  background:#f0f0f8;color:var(--muted);border:1px solid var(--border)
+}
 
 /* EXPERIMENTS */
-.exp-preview{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1rem}
+.exp-preview{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.5rem;margin-bottom:1rem
+}
 .exp-preview-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
 .exp-preview-header h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem}
-.exp-count-badge{font-size:.72rem;font-weight:600;color:var(--purple);background:var(--purple-l);padding:.25rem .7rem;border-radius:999px}
+.exp-count-badge{
+  font-size:.72rem;font-weight:600;color:var(--purple);background:var(--purple-l);
+  padding:.25rem .7rem;border-radius:999px
+}
 .exp-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
-.exp-channel{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.8rem;text-align:center}
-.exp-channel .ch-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.exp-channel{
+  background:var(--bg);border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;text-align:center
+}
+.exp-channel .ch-num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
 .exp-channel .ch-label{font-size:.72rem;color:var(--muted);font-weight:500;margin-top:.1rem}
 
 /* 90 DAYS */
 .days-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-@media(max-width:600px){.days-grid{grid-template-columns:1fr}}
-.day-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;position:relative;overflow:hidden}
-.day-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
-.day-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}
+.day-card{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.4rem;position:relative;overflow:hidden
+}
+.day-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)
+}
+.day-label{
+  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:.5rem
+}
 .day-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.8rem}
 .day-items{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.day-items li{font-size:.82rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.5}
+.day-items li{
+  font-size:.82rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.5
+}
 .day-items li::before{content:'→';position:absolute;left:0;color:var(--purple);font-weight:600}
 
 /* FOOTER */
 footer{background:var(--black);color:rgba(255,255,255,.5);padding:2.5rem 2rem;text-align:center}
-footer .footer-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.4rem}
+footer .footer-name{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:.4rem
+}
 footer p{font-size:.82rem}
 
 /* DIVIDER */
-.divider{height:1px;background:var(--border);max-width:980px;margin:0 auto}
+.divider{height:1px;background:var(--border);max-width:1100px;margin:0 auto}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .visual-grid.two-col{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  nav{padding:.9rem 1rem}
+  .nav-links{gap:.9rem}
+  section{padding:4rem 1rem}
+  .hero{padding:6rem 1rem 4rem}
+}
+@media(max-width:600px){
+  .days-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+}
 </style>
 </head>
 <body>
@@ -127,6 +303,7 @@ footer p{font-size:.82rem}
   <span class="nav-logo">Joana Olori</span>
   <ul class="nav-links">
     <li><a href="#system">System</a></li>
+    <li><a href="#proof">Proof</a></li>
     <li><a href="#tools">Tools</a></li>
     <li><a href="#experiments">Experiments</a></li>
     <li><a href="#90days">90 Days</a></li>
@@ -201,8 +378,8 @@ footer p{font-size:.82rem}
         <div class="flow-num">2</div>
         <div class="flow-content">
           <h4>Backlog Approved → Active Experiments</h4>
-          <p>Trigger: Status = "Approved". Auto-creates Active Experiment entry with Status = "Ready to Launch". Copies Hypothesis and Funnel Stage.</p>
-          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Filter node</span><span class="flow-tag">HTTP POST /v1/pages</span></div>
+          <p>Trigger: Status = "Approved". One automation creates the active experiment record, while the intake validation layer ensures required launch fields are complete before the experiment can move live.</p>
+          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Validation layer</span><span class="flow-tag">HTTP POST /v1/pages</span></div>
         </div>
       </div>
       <div class="flow-item">
@@ -227,6 +404,131 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
+<!-- VISUAL PROOF -->
+<section id="proof" class="visual-section">
+  <div class="container">
+    <div class="section-tag">System in action</div>
+    <h2 class="section-title">Visual proof of the workflow</h2>
+    <p class="section-desc">From idea capture to automation to funnel visibility — these are the actual systems I built, not mockups.</p>
+
+    <div class="visual-group">
+      <div class="visual-group-head">
+        <div>
+          <h3 class="visual-group-title">Notion — Growth operating system</h3>
+          <p class="visual-group-copy">Three connected databases that move ideas into prioritised backlog items and then into active experiments.</p>
+        </div>
+      </div>
+
+      <div class="visual-grid">
+        <div class="visual-card">
+          <div class="visual-label">Database 1</div>
+          <h4>Idea Library</h4>
+          <p>Free-form idea capture with funnel-stage tagging and a direct handoff into the experiment pipeline.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/notion-idea-library.png" alt="Notion Idea Library screenshot" class="visual-shot">
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-label">Database 2</div>
+          <h4>Experiment Backlog</h4>
+          <p>ICE-based prioritisation layer used to review, rank and approve experiments before launch.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/notion-experiment-backlog.png" alt="Notion Experiment Backlog screenshot" class="visual-shot">
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-label">Database 3</div>
+          <h4>Growth Experiments</h4>
+          <p>Launch-ready execution database with structured fields for owners, KPI tracking, statuses and learnings.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/notion-growth-experiments.png" alt="Notion Growth Experiments screenshot" class="visual-shot">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="visual-group">
+      <div class="visual-group-head">
+        <div>
+          <h3 class="visual-group-title">n8n — Automation layer</h3>
+          <p class="visual-group-copy">The workflows below show how ideas move automatically between databases, how intake is validated, and how experiment status is synced back from GrowthBook.</p>
+        </div>
+      </div>
+
+      <div class="visual-grid two-col">
+        <div class="visual-card">
+          <div class="visual-label">Workflow 1</div>
+          <h4>Idea Library → Experiment Backlog</h4>
+          <p>Moves selected ideas into the backlog and maps the core experiment fields automatically.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/n8n-flow-idea-to-backlog.png" alt="n8n workflow Idea Library to Experiment Backlog" class="visual-shot">
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-label">Workflow 2</div>
+          <h4>Backlog Approved → Active Experiments (Intake Validator)</h4>
+          <p>Checks required launch inputs and flags incomplete experiment setups before they go live.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/n8n-flow-intake-validator.png" alt="n8n workflow intake validator" class="visual-shot">
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-label">Workflow 3</div>
+          <h4>Backlog Approved → Active Experiments (Growth Experiments)</h4>
+          <p>Creates the active experiment record once a backlog item is approved and ready to enter execution.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/n8n-flow-growth-experiments.png" alt="n8n workflow backlog approved to growth experiments" class="visual-shot">
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-label">Workflow 4</div>
+          <h4>GrowthBook → Notion Sync</h4>
+          <p>Keeps experiment metadata aligned between GrowthBook and Notion so execution status stays accurate.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/n8n-flow-growthbook-sync.png" alt="n8n workflow GrowthBook to Notion sync" class="visual-shot">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="visual-group">
+      <div class="visual-group-head">
+        <div>
+          <h3 class="visual-group-title">Amplitude — PLG funnel visibility</h3>
+          <p class="visual-group-copy">The dashboard layer translates the experimentation system into measurable funnel visibility and activation insights.</p>
+        </div>
+      </div>
+
+      <div class="visual-grid two-col">
+        <div class="visual-card">
+          <div class="visual-label">Dashboard 1</div>
+          <h4>PLG Funnel Overview</h4>
+          <p>Top-level view of activation and drop-off points to identify where growth effort should be focused first.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/amplitude-funnel-1.png" alt="Amplitude PLG funnel dashboard screenshot 1" class="visual-shot">
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-label">Dashboard 2</div>
+          <h4>Activation / Conversion Detail</h4>
+          <p>A deeper breakdown used to isolate bottlenecks, evaluate experiment impact and inform prioritisation.</p>
+          <div class="visual-shot-wrap">
+            <img src="images/amplitude-funnel-2.png" alt="Amplitude PLG funnel dashboard screenshot 2" class="visual-shot">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- TOOLS -->
 <section id="tools">
   <div class="container">
@@ -235,13 +537,8 @@ footer p{font-size:.82rem}
     <p class="section-desc">Each tool delivers immediate value to Photoroom's SMB audience and drives users into the app. Zero friction, instant Aha moment.</p>
     <div class="tools-grid">
       <div class="tool-card">
-        <div class="tool-preview tool-preview-1">
-          <div class="tool-mockup">
-            <div class="tool-mockup-bar"></div>
-            <div class="tool-mockup-line w80"></div>
-            <div class="tool-mockup-line w60"></div>
-            <div class="tool-mockup-line w40"></div>
-          </div>
+        <div class="tool-preview">
+          <img src="images/tool-seo-generator.png" alt="SEO Description Generator screenshot">
         </div>
         <div class="tool-body">
           <h3>SEO Description Generator</h3>
@@ -253,14 +550,10 @@ footer p{font-size:.82rem}
           </div>
         </div>
       </div>
+
       <div class="tool-card">
-        <div class="tool-preview tool-preview-2">
-          <div class="tool-mockup">
-            <div class="tool-mockup-bar"></div>
-            <div class="tool-mockup-line w80"></div>
-            <div class="tool-mockup-line w60"></div>
-            <div class="tool-mockup-line w40"></div>
-          </div>
+        <div class="tool-preview">
+          <img src="images/tool-product-copy-generator.png" alt="Product Copy Generator screenshot">
         </div>
         <div class="tool-body">
           <h3>Product Copy Generator</h3>
@@ -273,14 +566,10 @@ footer p{font-size:.82rem}
           </div>
         </div>
       </div>
+
       <div class="tool-card">
-        <div class="tool-preview tool-preview-3">
-          <div class="tool-mockup">
-            <div class="tool-mockup-bar"></div>
-            <div class="tool-mockup-line w80"></div>
-            <div class="tool-mockup-line w60"></div>
-            <div class="tool-mockup-line w40"></div>
-          </div>
+        <div class="tool-preview">
+          <img src="images/tool-visual-generator.png" alt="Product Visual Generator screenshot">
         </div>
         <div class="tool-body">
           <h3>Product Visual Generator</h3>
@@ -303,8 +592,8 @@ footer p{font-size:.82rem}
 <section id="experiments" style="background:var(--white);padding:5rem 2rem">
   <div class="container">
     <div class="section-tag">Strategy</div>
-    <h2 class="section-title">50-experiment growth backlog</h2>
-    <p class="section-desc">High-velocity experiment backlog covering every acquisition channel. Prioritised by ICE score. Ready to ship week 1.</p>
+    <h2 class="section-title">A growth roadmap built to ship</h2>
+    <p class="section-desc">A focused experiment pipeline across acquisition, conversion, retention, viral and PLG — prioritised by ICE score.</p>
     <div class="exp-preview">
       <div class="exp-preview-header">
         <h3>Experiments by channel</h3>
