@@ -8,16 +8,17 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#fafaf8;
+  --bg:#f7f8fc;
   --white:#ffffff;
-  --black:#0c0c0c;
-  --purple:#5b3fff;
-  --purple-l:#eeeaff;
-  --pink:#ff3d8a;
-  --grad:linear-gradient(135deg,#5b3fff 0%,#ff3d8a 100%);
-  --text:#1a1828;
-  --muted:#7a7a9a;
-  --border:#e6e4f0;
+  --black:#04045f;
+  --purple:#4a19f0;
+  --purple-l:#ece8ff;
+  --pink:#f6adc9;
+  --grad:linear-gradient(135deg,#f8b3cf 0%, #dcb9f7 50%, #8be0f4 100%);
+  --grad-strong:linear-gradient(135deg,#4a19f0 0%, #345dff 100%);
+  --text:#171742;
+  --muted:#6f7294;
+  --border:#e3e6f3;
   --r:16px;
 }
 html{scroll-behavior:smooth}
@@ -26,7 +27,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 /* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(250,250,248,0.92);
+  background:rgba(247,248,252,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   padding:.9rem 2rem;
@@ -46,9 +47,14 @@ nav{
   padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden
 }
 .hero::before{
-  content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
-  width:800px;height:800px;
-  background:radial-gradient(circle,rgba(91,63,255,.06) 0%,transparent 70%);
+  content:'';
+  position:absolute;
+  top:-200px;
+  left:50%;
+  transform:translateX(-50%);
+  width:800px;
+  height:800px;
+  background:radial-gradient(circle,rgba(74,25,240,.08) 0%,transparent 70%);
   pointer-events:none
 }
 .hero-inner{max-width:700px;position:relative}
@@ -67,11 +73,11 @@ nav{
   font-weight:300;line-height:1.7
 }
 .hero-cta{
-  display:inline-flex;align-items:center;gap:.5rem;background:var(--grad);
+  display:inline-flex;align-items:center;gap:.5rem;background:var(--grad-strong);
   color:white;text-decoration:none;padding:.85rem 2rem;border-radius:999px;
   font-weight:600;font-size:.9rem;transition:opacity .2s,transform .15s
 }
-.hero-cta:hover{opacity:.9;transform:translateY(-2px)}
+.hero-cta:hover{opacity:.92;transform:translateY(-2px)}
 .hero-stats{display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
 .hero-stat{text-align:center}
 .hero-stat .num{
@@ -103,7 +109,7 @@ section{padding:5rem 2rem}
   background:var(--white);border:1px solid var(--border);border-radius:var(--r);
   padding:1.5rem;transition:border-color .2s,box-shadow .2s
 }
-.system-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
+.system-card:hover{border-color:#c7cbf5;box-shadow:0 4px 24px rgba(52,93,255,.07)}
 .system-card-icon{
   width:40px;height:40px;border-radius:10px;display:flex;align-items:center;
   justify-content:center;font-size:1.2rem;margin-bottom:1rem;flex-shrink:0
@@ -120,7 +126,7 @@ section{padding:5rem 2rem}
   padding:1.2rem 1.4rem;display:flex;align-items:flex-start;gap:1rem
 }
 .flow-num{
-  width:28px;height:28px;border-radius:8px;background:var(--grad);color:white;
+  width:28px;height:28px;border-radius:8px;background:var(--grad-strong);color:white;
   font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px
 }
@@ -202,7 +208,7 @@ section{padding:5rem 2rem}
   background:var(--white);border:1px solid var(--border);border-radius:var(--r);
   overflow:hidden;transition:border-color .2s,box-shadow .2s
 }
-.tool-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
+.tool-card:hover{border-color:#c7cbf5;box-shadow:0 4px 24px rgba(52,93,255,.07)}
 .tool-preview{
   height:320px;
   display:flex;
@@ -210,7 +216,7 @@ section{padding:5rem 2rem}
   justify-content:center;
   position:relative;
   overflow:hidden;
-  background:#f6f5fb;
+  background:#f3f4fc;
   padding:1rem;
 }
 .tool-preview img{
@@ -226,12 +232,12 @@ section{padding:5rem 2rem}
 }
 .tool-card:hover .tool-preview img{transform:scale(1.02)}
 .tool-body{padding:1.2rem}
-.tool-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+.tool-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.45rem}
 .tool-body p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.8rem}
 .tool-body .tool-stack{display:flex;gap:.3rem;flex-wrap:wrap}
 .tool-stack-item{
   font-size:.62rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;
-  background:#f0f0f8;color:var(--muted);border:1px solid var(--border)
+  background:#f1f3fb;color:var(--muted);border:1px solid var(--border)
 }
 
 /* EXPERIMENTS */
@@ -277,7 +283,12 @@ section{padding:5rem 2rem}
 .day-items li::before{content:'→';position:absolute;left:0;color:var(--purple);font-weight:600}
 
 /* FOOTER */
-footer{background:var(--black);color:rgba(255,255,255,.5);padding:2.5rem 2rem;text-align:center}
+footer{
+  background:var(--black);
+  color:rgba(255,255,255,.68);
+  padding:2.5rem 2rem;
+  text-align:center
+}
 footer .footer-name{
   font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
@@ -294,7 +305,7 @@ footer p{font-size:.82rem}
   top:0;left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.85);
+  background:rgba(5,4,94,0.88);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -312,7 +323,7 @@ footer p{font-size:.82rem}
   max-width:92%;
   max-height:90%;
   border-radius:12px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
   background:#fff;
 }
 .lightbox-close{
@@ -356,12 +367,11 @@ footer p{font-size:.82rem}
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Senior Growth Marketing — Photoroom</div>
     <h1>Built to ship.<br><span class="grad">Built to grow.</span></h1>
-    <p class="hero-desc">I didn't just prepare for this interview — I built the growth infrastructure. Here's what I shipped in 5 days using Claude, n8n, Notion, GrowthBook and Amplitude.</p>
+    <p class="hero-desc">I didn't just prepare for this interview — I built the growth infrastructure. Here's what I shipped in 5 days using Claude, Chat-GPT, n8n, Notion, GrowthBook, Cursor and Amplitude.</p>
     <a href="#system" class="hero-cta">See what I built →</a>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num">4</div><div class="lbl">n8n automations</div></div>
@@ -374,7 +384,6 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<!-- SYSTEM -->
 <section id="system">
   <div class="container">
     <div class="section-tag">Ops infrastructure</div>
@@ -382,19 +391,19 @@ footer p{font-size:.82rem}
     <p class="section-desc">Built end-to-end: from idea submission to experiment launch to results tracking. Every step automated.</p>
     <div class="system-grid">
       <div class="system-card">
-        <div class="system-card-icon" style="background:#eeeaff">💡</div>
+        <div class="system-card-icon" style="background:#ece8ff">💡</div>
         <h3>Idea Library</h3>
         <p>Free-form idea collection with Funnel Stage tagging. "Move to Backlog" checkbox triggers automatic n8n flow to Experiment Backlog.</p>
         <div class="tech-row"><span class="tech-tag">Notion API</span><span class="tech-tag">Node.js</span></div>
       </div>
       <div class="system-card">
-        <div class="system-card-icon" style="background:#e8f5e9">🎯</div>
+        <div class="system-card-icon" style="background:#eef4ff">🎯</div>
         <h3>Experiment Backlog</h3>
         <p>ICE scoring with auto-calculated priority. Formula: Impact × Confidence × Ease. Status: Idea → In Review → Approved → triggers Active Experiments.</p>
         <div class="tech-row"><span class="tech-tag">Notion Formula</span><span class="tech-tag">ICE scoring</span></div>
       </div>
       <div class="system-card">
-        <div class="system-card-icon" style="background:#fff0f6">🧪</div>
+        <div class="system-card-icon" style="background:#fff1f7">🧪</div>
         <h3>Active Experiments</h3>
         <p>15-property tracking database. Trigger fields validated by n8n. Results fields auto-populated. 4 views: Pipeline, By Status (Kanban), Results, Learnings Library.</p>
         <div class="tech-row"><span class="tech-tag">15 properties</span><span class="tech-tag">4 views</span><span class="tech-tag">Page template</span></div>
@@ -405,7 +414,6 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<!-- FLOWS -->
 <section style="padding:5rem 2rem;background:var(--white)">
   <div class="container">
     <div class="section-tag">Automation</div>
@@ -450,7 +458,6 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<!-- VISUAL PROOF -->
 <section id="proof" class="visual-section">
   <div class="container">
     <div class="section-tag">System in action</div>
@@ -575,7 +582,6 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<!-- TOOLS -->
 <section id="tools">
   <div class="container">
     <div class="section-tag">Growth assets</div>
@@ -634,7 +640,6 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<!-- EXPERIMENTS -->
 <section id="experiments" style="background:var(--white);padding:5rem 2rem">
   <div class="container">
     <div class="section-tag">Strategy</div>
@@ -659,7 +664,6 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<!-- 90 DAYS -->
 <section id="90days">
   <div class="container">
     <div class="section-tag">Plan</div>
@@ -708,7 +712,6 @@ footer p{font-size:.82rem}
   <p>Senior Growth Marketing — built for Photoroom · April 2026</p>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" onclick="closeLightbox()">×</span>
   <img id="lightbox-img" src="" alt="Expanded screenshot">
