@@ -190,8 +190,11 @@ section{padding:5rem 2rem}
 .visual-shot{
   width:100%;
   display:block;
-  height:auto
+  height:auto;
+  cursor:pointer;
+  transition:transform .2s ease
 }
+.visual-shot:hover{transform:scale(1.01)}
 
 /* TOOLS */
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
@@ -201,21 +204,25 @@ section{padding:5rem 2rem}
 }
 .tool-card:hover{border-color:#c4bef0;box-shadow:0 4px 24px rgba(91,63,255,.07)}
 .tool-preview{
-  height:220px;
+  height:320px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:3rem;
   position:relative;
   overflow:hidden;
-  background:#f6f5fb
+  background:#f6f5fb;
+  padding:1rem;
 }
 .tool-preview img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
+  object-position:top center;
   display:block;
-  transition:transform .3s ease
+  transition:transform .3s ease;
+  border-radius:12px;
+  background:#fff;
+  cursor:pointer;
 }
 .tool-card:hover .tool-preview img{transform:scale(1.02)}
 .tool-body{padding:1.2rem}
@@ -281,6 +288,44 @@ footer p{font-size:.82rem}
 /* DIVIDER */
 .divider{height:1px;background:var(--border);max-width:1100px;margin:0 auto}
 
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+  padding:2rem;
+}
+.lightbox.active{
+  opacity:1;
+  pointer-events:auto;
+}
+.lightbox img{
+  max-width:92%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  background:#fff;
+}
+.lightbox-close{
+  position:absolute;
+  top:18px;
+  right:28px;
+  font-size:2rem;
+  color:white;
+  cursor:pointer;
+  font-weight:300;
+  line-height:1;
+}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .visual-grid.two-col{grid-template-columns:1fr}
@@ -294,6 +339,7 @@ footer p{font-size:.82rem}
 @media(max-width:600px){
   .days-grid{grid-template-columns:1fr}
   .hero-stats{gap:1.5rem}
+  .tool-preview{height:260px}
 }
 </style>
 </head>
@@ -421,29 +467,29 @@ footer p{font-size:.82rem}
 
       <div class="visual-grid">
         <div class="visual-card">
-          <div class="visual-label">Database 1</div>
+          <div class="visual-label">Database 1 · Click to enlarge</div>
           <h4>Idea Library</h4>
           <p>Free-form idea capture with funnel-stage tagging and a direct handoff into the experiment pipeline.</p>
           <div class="visual-shot-wrap">
-            <img src="images/notion-idea-library.png" alt="Notion Idea Library screenshot" class="visual-shot">
+            <img src="images/notion-idea-library.png" alt="Notion Idea Library screenshot" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Database 2</div>
+          <div class="visual-label">Database 2 · Click to enlarge</div>
           <h4>Experiment Backlog</h4>
           <p>ICE-based prioritisation layer used to review, rank and approve experiments before launch.</p>
           <div class="visual-shot-wrap">
-            <img src="images/notion-experiment-backlog.png" alt="Notion Experiment Backlog screenshot" class="visual-shot">
+            <img src="images/notion-experiment-backlog.png" alt="Notion Experiment Backlog screenshot" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Database 3</div>
+          <div class="visual-label">Database 3 · Click to enlarge</div>
           <h4>Growth Experiments</h4>
           <p>Launch-ready execution database with structured fields for owners, KPI tracking, statuses and learnings.</p>
           <div class="visual-shot-wrap">
-            <img src="images/notion-growth-experiments.png" alt="Notion Growth Experiments screenshot" class="visual-shot">
+            <img src="images/notion-growth-experiments.png" alt="Notion Growth Experiments screenshot" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
       </div>
@@ -459,38 +505,38 @@ footer p{font-size:.82rem}
 
       <div class="visual-grid two-col">
         <div class="visual-card">
-          <div class="visual-label">Workflow 1</div>
+          <div class="visual-label">Workflow 1 · Click to enlarge</div>
           <h4>Idea Library → Experiment Backlog</h4>
           <p>Moves selected ideas into the backlog and maps the core experiment fields automatically.</p>
           <div class="visual-shot-wrap">
-            <img src="images/n8n-flow-idea-to-backlog.png" alt="n8n workflow Idea Library to Experiment Backlog" class="visual-shot">
+            <img src="images/n8n-flow-idea-to-backlog.png" alt="n8n workflow Idea Library to Experiment Backlog" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Workflow 2</div>
+          <div class="visual-label">Workflow 2 · Click to enlarge</div>
           <h4>Backlog Approved → Active Experiments (Intake Validator)</h4>
           <p>Checks required launch inputs and flags incomplete experiment setups before they go live.</p>
           <div class="visual-shot-wrap">
-            <img src="images/n8n-flow-intake-validator.png" alt="n8n workflow intake validator" class="visual-shot">
+            <img src="images/n8n-flow-intake-validator.png" alt="n8n workflow intake validator" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Workflow 3</div>
+          <div class="visual-label">Workflow 3 · Click to enlarge</div>
           <h4>Backlog Approved → Active Experiments (Growth Experiments)</h4>
           <p>Creates the active experiment record once a backlog item is approved and ready to enter execution.</p>
           <div class="visual-shot-wrap">
-            <img src="images/n8n-flow-growth-experiments.png" alt="n8n workflow backlog approved to growth experiments" class="visual-shot">
+            <img src="images/n8n-flow-growth-experiments.png" alt="n8n workflow backlog approved to growth experiments" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Workflow 4</div>
+          <div class="visual-label">Workflow 4 · Click to enlarge</div>
           <h4>GrowthBook → Notion Sync</h4>
           <p>Keeps experiment metadata aligned between GrowthBook and Notion so execution status stays accurate.</p>
           <div class="visual-shot-wrap">
-            <img src="images/n8n-flow-growthbook-sync.png" alt="n8n workflow GrowthBook to Notion sync" class="visual-shot">
+            <img src="images/n8n-flow-growthbook-sync.png" alt="n8n workflow GrowthBook to Notion sync" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
       </div>
@@ -506,20 +552,20 @@ footer p{font-size:.82rem}
 
       <div class="visual-grid two-col">
         <div class="visual-card">
-          <div class="visual-label">Dashboard 1</div>
+          <div class="visual-label">Dashboard 1 · Click to enlarge</div>
           <h4>PLG Funnel Overview</h4>
           <p>Top-level view of activation and drop-off points to identify where growth effort should be focused first.</p>
           <div class="visual-shot-wrap">
-            <img src="images/amplitude-funnel-1.png" alt="Amplitude PLG funnel dashboard screenshot 1" class="visual-shot">
+            <img src="images/amplitude-funnel-1.png" alt="Amplitude PLG funnel dashboard screenshot 1" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Dashboard 2</div>
+          <div class="visual-label">Dashboard 2 · Click to enlarge</div>
           <h4>Activation / Conversion Detail</h4>
           <p>A deeper breakdown used to isolate bottlenecks, evaluate experiment impact and inform prioritisation.</p>
           <div class="visual-shot-wrap">
-            <img src="images/amplitude-funnel-2.png" alt="Amplitude PLG funnel dashboard screenshot 2" class="visual-shot">
+            <img src="images/amplitude-funnel-2.png" alt="Amplitude PLG funnel dashboard screenshot 2" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
       </div>
@@ -538,7 +584,7 @@ footer p{font-size:.82rem}
     <div class="tools-grid">
       <div class="tool-card">
         <div class="tool-preview">
-          <img src="images/tool-seo-generator.png" alt="SEO Description Generator screenshot">
+          <img src="images/tool-seo-generator.png" alt="SEO Description Generator screenshot" onclick="openLightbox(this.src)">
         </div>
         <div class="tool-body">
           <h3>SEO Description Generator</h3>
@@ -553,7 +599,7 @@ footer p{font-size:.82rem}
 
       <div class="tool-card">
         <div class="tool-preview">
-          <img src="images/tool-product-copy-generator.png" alt="Product Copy Generator screenshot">
+          <img src="images/tool-product-copy-generator.png" alt="Product Copy Generator screenshot" onclick="openLightbox(this.src)">
         </div>
         <div class="tool-body">
           <h3>Product Copy Generator</h3>
@@ -569,7 +615,7 @@ footer p{font-size:.82rem}
 
       <div class="tool-card">
         <div class="tool-preview">
-          <img src="images/tool-visual-generator.png" alt="Product Visual Generator screenshot">
+          <img src="images/tool-visual-generator.png" alt="Product Visual Generator screenshot" onclick="openLightbox(this.src)">
         </div>
         <div class="tool-body">
           <h3>Product Visual Generator</h3>
@@ -592,8 +638,8 @@ footer p{font-size:.82rem}
 <section id="experiments" style="background:var(--white);padding:5rem 2rem">
   <div class="container">
     <div class="section-tag">Strategy</div>
-    <h2 class="section-title">A growth roadmap built to ship</h2>
-    <p class="section-desc">A focused experiment pipeline across acquisition, conversion, retention, viral and PLG — prioritised by ICE score.</p>
+    <h2 class="section-title">50 prioritised growth bets</h2>
+    <p class="section-desc">A focused experiment pipeline across acquisition, conversion, retention, viral and PLG — prioritised by ICE score and built to ship fast.</p>
     <div class="exp-preview">
       <div class="exp-preview-header">
         <h3>Experiments by channel</h3>
@@ -661,6 +707,39 @@ footer p{font-size:.82rem}
   <div class="footer-name">Joana Olori</div>
   <p>Senior Growth Marketing — built for Photoroom · April 2026</p>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="Expanded screenshot">
+</div>
+
+<script>
+function openLightbox(src){
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lightbox').addEventListener('click', function(e){
+  if(e.target === this){
+    closeLightbox();
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    closeLightbox();
+  }
+});
+</script>
 
 </body>
 </html>
