@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joana Olori — Growth Marketing Portfolio</title>
+<title>Joana Olori — Senior Growth Marketing | Experimentation & Systems</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,6 +20,7 @@
   --muted:#6f7294;
   --border:#e3e6f3;
   --r:16px;
+  --shadow:0 8px 30px rgba(18,25,69,.06);
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
@@ -37,7 +38,7 @@ nav{
   font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
 }
-.nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
+.nav-links{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
 .nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--purple)}
 
@@ -52,71 +53,154 @@ nav{
   top:-200px;
   left:50%;
   transform:translateX(-50%);
-  width:800px;
-  height:800px;
+  width:860px;
+  height:860px;
   background:radial-gradient(circle,rgba(74,25,240,.08) 0%,transparent 70%);
   pointer-events:none
 }
-.hero-inner{max-width:700px;position:relative}
+.hero-inner{max-width:820px;position:relative}
 .hero-tag{
   display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;color:var(--purple);
   background:var(--purple-l);padding:.35rem 1rem;border-radius:999px;margin-bottom:1.5rem
 }
 .hero h1{
-  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,7vw,4.5rem);
-  letter-spacing:-.04em;line-height:1.05;margin-bottom:1.2rem
+  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.6rem,7vw,4.9rem);
+  letter-spacing:-.04em;line-height:1.04;margin-bottom:1.15rem
 }
 .hero h1 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-desc{
-  font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;
-  font-weight:300;line-height:1.7
+  font-size:1.05rem;color:var(--muted);max-width:720px;margin:0 auto 2rem;
+  font-weight:300;line-height:1.75
 }
 .hero-cta{
   display:inline-flex;align-items:center;gap:.5rem;background:var(--grad-strong);
-  color:white;text-decoration:none;padding:.85rem 2rem;border-radius:999px;
-  font-weight:600;font-size:.9rem;transition:opacity .2s,transform .15s
+  color:white;text-decoration:none;padding:.9rem 2rem;border-radius:999px;
+  font-weight:600;font-size:.9rem;transition:opacity .2s,transform .15s;
+  box-shadow:0 10px 24px rgba(52,93,255,.18)
 }
-.hero-cta:hover{opacity:.92;transform:translateY(-2px)}
-.hero-stats{display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
+.hero-cta:hover{opacity:.94;transform:translateY(-2px)}
+.hero-stats{display:flex;justify-content:center;gap:2.4rem;margin-top:3rem;flex-wrap:wrap}
 .hero-stat{text-align:center}
 .hero-stat .num{
-  font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.85rem;
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
 }
 .hero-stat .lbl{font-size:.78rem;color:var(--muted);font-weight:500;margin-top:.1rem}
 
-/* SECTIONS */
+/* GENERAL */
 section{padding:5rem 2rem}
-.container{max-width:1100px;margin:0 auto}
+.container{max-width:1120px;margin:0 auto}
 .section-tag{
   display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;
   letter-spacing:.1em;text-transform:uppercase;color:var(--purple);
   background:var(--purple-l);padding:.25rem .7rem;border-radius:999px;margin-bottom:.8rem
 }
 .section-title{
-  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);
+  font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);
   letter-spacing:-.03em;margin-bottom:.6rem
 }
 .section-desc{
-  font-size:.95rem;color:var(--muted);max-width:620px;font-weight:300;
-  margin-bottom:2.5rem;line-height:1.7
+  font-size:.96rem;color:var(--muted);max-width:700px;font-weight:300;
+  margin-bottom:2.2rem;line-height:1.7
+}
+.divider{height:1px;background:var(--border);max-width:1120px;margin:0 auto}
+
+/* TOOLS */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.tool-card{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;transition:border-color .2s,box-shadow .2s
+}
+.tool-card:hover{border-color:#c7cbf5;box-shadow:var(--shadow)}
+.tool-preview{
+  height:320px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;background:#f3f4fc;padding:1rem;
+}
+.tool-preview img{
+  width:100%;height:100%;object-fit:contain;object-position:top center;
+  display:block;transition:transform .3s ease;border-radius:12px;background:#fff;cursor:pointer;
+}
+.tool-card:hover .tool-preview img{transform:scale(1.02)}
+.tool-body{padding:1.2rem}
+.tool-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.45rem}
+.tool-body p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.8rem}
+.tool-stack{display:flex;gap:.3rem;flex-wrap:wrap}
+.tool-stack-item{
+  font-size:.62rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;
+  background:#f1f3fb;color:var(--muted);border:1px solid var(--border)
 }
 
-/* SYSTEM SECTION */
+/* EXPERIMENT CARDS */
+.exp-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.exp-mini-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:1.15rem;
+  transition:border-color .2s, box-shadow .2s;
+}
+.exp-mini-card:hover{border-color:#c7cbf5;box-shadow:var(--shadow)}
+.exp-mini-top{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.8rem}
+.exp-mini-icon{
+  width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;background:#eef1ff
+}
+.exp-mini-card h3{
+  font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;line-height:1.3
+}
+.exp-mini-card p{
+  font-size:.81rem;color:var(--muted);line-height:1.58;margin-bottom:.85rem
+}
+.exp-meta{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.exp-tags{display:flex;gap:.3rem;flex-wrap:wrap}
+.exp-tag{
+  font-size:.63rem;font-weight:700;padding:.22rem .58rem;border-radius:999px;background:var(--purple-l);color:var(--purple)
+}
+.exp-score{
+  font-size:.72rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+
+/* SHOPIFY */
+.shopify-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.shopify-card{
+  background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1rem;
+  box-shadow:var(--shadow)
+}
+.shot-label{
+  display:inline-flex;align-items:center;gap:.35rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--purple);background:var(--purple-l);padding:.32rem .65rem;border-radius:999px;margin-bottom:.8rem
+}
+.shot-title{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.25rem
+}
+.shot-copy{
+  font-size:.8rem;color:var(--muted);line-height:1.55;margin-bottom:.8rem
+}
+.shot-wrap{
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff
+}
+.shot-wrap img{
+  width:100%;display:block;height:auto;cursor:pointer;transition:transform .2s ease
+}
+.shot-wrap img:hover{transform:scale(1.01)}
+
+/* SYSTEM */
 .system-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
 .system-card{
   background:var(--white);border:1px solid var(--border);border-radius:var(--r);
   padding:1.5rem;transition:border-color .2s,box-shadow .2s
 }
-.system-card:hover{border-color:#c7cbf5;box-shadow:0 4px 24px rgba(52,93,255,.07)}
+.system-card:hover{border-color:#c7cbf5;box-shadow:var(--shadow)}
 .system-card-icon{
   width:40px;height:40px;border-radius:10px;display:flex;align-items:center;
   justify-content:center;font-size:1.2rem;margin-bottom:1rem;flex-shrink:0
 }
 .system-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}
 .system-card p{font-size:.83rem;color:var(--muted);line-height:1.6}
-.system-card .tech-row{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.8rem}
+.tech-row{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.8rem}
 .tech-tag{font-size:.65rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;background:var(--purple-l);color:var(--purple)}
 
 /* FLOWS */
@@ -132,135 +216,41 @@ section{padding:5rem 2rem}
 }
 .flow-content h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:.3rem}
 .flow-content p{font-size:.82rem;color:var(--muted);line-height:1.55}
-.flow-content .flow-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}
+.flow-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}
 .flow-tag{
   font-size:.62rem;font-weight:600;padding:.18rem .5rem;border-radius:999px;
   border:1px solid var(--border);color:var(--muted)
 }
 
-/* VISUAL PROOF SECTION */
+/* VISUAL PROOF */
 .visual-section{background:var(--white)}
 .visual-group{margin-top:2.25rem}
 .visual-group:first-of-type{margin-top:0}
-.visual-group-head{
-  display:flex;align-items:end;justify-content:space-between;gap:1rem;
-  margin-bottom:1rem;flex-wrap:wrap
-}
+.visual-group-head{margin-bottom:1rem}
 .visual-group-title{
   font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.02em
 }
 .visual-group-copy{
-  font-size:.86rem;color:var(--muted);max-width:680px
+  font-size:.86rem;color:var(--muted);max-width:700px
 }
 .visual-grid{display:grid;grid-template-columns:1fr;gap:1rem}
 .visual-grid.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
 .visual-card{
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:1rem;
-  box-shadow:0 6px 24px rgba(17,17,26,.04)
-}
-.visual-label{
-  display:inline-flex;
-  align-items:center;
-  gap:.35rem;
-  font-size:.68rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--purple);
-  background:var(--purple-l);
-  padding:.32rem .65rem;
-  border-radius:999px;
-  margin-bottom:.8rem
+  background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:1rem;box-shadow:var(--shadow)
 }
 .visual-card h4{
-  font-family:'Syne',sans-serif;
-  font-weight:700;
-  font-size:.95rem;
-  margin-bottom:.3rem
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.3rem
 }
 .visual-card p{
-  font-size:.82rem;
-  color:var(--muted);
-  line-height:1.55;
-  margin-bottom:.85rem
+  font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.85rem
 }
 .visual-shot-wrap{
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  background:#fff
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff
 }
 .visual-shot{
-  width:100%;
-  display:block;
-  height:auto;
-  cursor:pointer;
-  transition:transform .2s ease
+  width:100%;display:block;height:auto;cursor:pointer;transition:transform .2s ease
 }
 .visual-shot:hover{transform:scale(1.01)}
-
-/* TOOLS */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
-.tool-card{
-  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
-  overflow:hidden;transition:border-color .2s,box-shadow .2s
-}
-.tool-card:hover{border-color:#c7cbf5;box-shadow:0 4px 24px rgba(52,93,255,.07)}
-.tool-preview{
-  height:320px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  background:#f3f4fc;
-  padding:1rem;
-}
-.tool-preview img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:top center;
-  display:block;
-  transition:transform .3s ease;
-  border-radius:12px;
-  background:#fff;
-  cursor:pointer;
-}
-.tool-card:hover .tool-preview img{transform:scale(1.02)}
-.tool-body{padding:1.2rem}
-.tool-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.45rem}
-.tool-body p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:.8rem}
-.tool-body .tool-stack{display:flex;gap:.3rem;flex-wrap:wrap}
-.tool-stack-item{
-  font-size:.62rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;
-  background:#f1f3fb;color:var(--muted);border:1px solid var(--border)
-}
-
-/* EXPERIMENTS */
-.exp-preview{
-  background:var(--white);border:1px solid var(--border);border-radius:var(--r);
-  padding:1.5rem;margin-bottom:1rem
-}
-.exp-preview-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
-.exp-preview-header h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem}
-.exp-count-badge{
-  font-size:.72rem;font-weight:600;color:var(--purple);background:var(--purple-l);
-  padding:.25rem .7rem;border-radius:999px
-}
-.exp-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
-.exp-channel{
-  background:var(--bg);border:1px solid var(--border);border-radius:10px;
-  padding:.8rem;text-align:center
-}
-.exp-channel .ch-num{
-  font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;
-  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent
-}
-.exp-channel .ch-label{font-size:.72rem;color:var(--muted);font-weight:500;margin-top:.1rem}
 
 /* 90 DAYS */
 .days-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -296,50 +286,23 @@ footer .footer-name{
 }
 footer p{font-size:.82rem}
 
-/* DIVIDER */
-.divider{height:1px;background:var(--border);max-width:1100px;margin:0 auto}
-
 /* LIGHTBOX */
 .lightbox{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  height:100%;
-  background:rgba(5,4,94,0.88);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .25s ease;
-  padding:2rem;
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(5,4,94,0.88);display:flex;align-items:center;justify-content:center;
+  z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s ease;padding:2rem;
 }
-.lightbox.active{
-  opacity:1;
-  pointer-events:auto;
-}
+.lightbox.active{opacity:1;pointer-events:auto}
 .lightbox img{
-  max-width:92%;
-  max-height:90%;
-  border-radius:12px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.35);
-  background:#fff;
+  max-width:92%;max-height:90%;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.35);background:#fff;
 }
 .lightbox-close{
-  position:absolute;
-  top:18px;
-  right:28px;
-  font-size:2rem;
-  color:white;
-  cursor:pointer;
-  font-weight:300;
-  line-height:1;
+  position:absolute;top:18px;right:28px;font-size:2rem;color:white;cursor:pointer;font-weight:300;line-height:1;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .visual-grid.two-col{grid-template-columns:1fr}
+  .visual-grid.two-col,.shopify-grid{grid-template-columns:1fr}
 }
 @media(max-width:700px){
   nav{padding:.9rem 1rem}
@@ -359,24 +322,24 @@ footer p{font-size:.82rem}
 <nav>
   <span class="nav-logo">Joana Olori</span>
   <ul class="nav-links">
-    <li><a href="#system">System</a></li>
-    <li><a href="#proof">Proof</a></li>
     <li><a href="#tools">Tools</a></li>
     <li><a href="#experiments">Experiments</a></li>
+    <li><a href="#system">System</a></li>
+    <li><a href="#proof">Proof</a></li>
     <li><a href="#90days">90 Days</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Senior Growth Marketing — Photoroom</div>
+    <div class="hero-tag">Senior Growth Marketing — Experimentation & Systems</div>
     <h1>Built to ship.<br><span class="grad">Built to grow.</span></h1>
-    <p class="hero-desc">I didn't just prepare for this interview — I built the growth infrastructure. Here's what I shipped in 5 days using Claude, Chat-GPT, n8n, Notion, GrowthBook, Cursor and Amplitude.</p>
-    <a href="#system" class="hero-cta">See what I built →</a>
+    <p class="hero-desc">I didn’t just prepare for this interview — I built the growth engine I would use in the role: a system to generate, prioritise and launch experiments, measure impact, and drive user activation. Built in 5 days using n8n, Notion, GrowthBook, Amplitude and AI tools like Claude and ChatGPT.</p>
+    <a href="#tools" class="hero-cta">See what I built →</a>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num">4</div><div class="lbl">n8n automations</div></div>
       <div class="hero-stat"><div class="num">3</div><div class="lbl">Live growth tools</div></div>
-      <div class="hero-stat"><div class="num">50</div><div class="lbl">Experiment backlog</div></div>
+      <div class="hero-stat"><div class="num">50</div><div class="lbl">Prioritised growth bets</div></div>
       <div class="hero-stat"><div class="num">3</div><div class="lbl">Notion databases</div></div>
     </div>
   </div>
@@ -384,29 +347,57 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<section id="system">
+<!-- TOOLS -->
+<section id="tools">
   <div class="container">
-    <div class="section-tag">Ops infrastructure</div>
-    <h2 class="section-title">A full growth experimentation system</h2>
-    <p class="section-desc">Built end-to-end: from idea submission to experiment launch to results tracking. Every step automated.</p>
-    <div class="system-grid">
-      <div class="system-card">
-        <div class="system-card-icon" style="background:#ece8ff">💡</div>
-        <h3>Idea Library</h3>
-        <p>Free-form idea collection with Funnel Stage tagging. "Move to Backlog" checkbox triggers automatic n8n flow to Experiment Backlog.</p>
-        <div class="tech-row"><span class="tech-tag">Notion API</span><span class="tech-tag">Node.js</span></div>
+    <div class="section-tag">Growth assets</div>
+    <h2 class="section-title">3 free tools — built to convert</h2>
+    <p class="section-desc">I built three user-facing tools designed to create immediate value for SMB sellers, generate intent, and turn product usefulness into a growth channel.</p>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-preview">
+          <img src="images/tool-seo-generator.png" alt="SEO Description Generator screenshot" onclick="openLightbox(this.src)">
+        </div>
+        <div class="tool-body">
+          <h3>SEO Description Generator</h3>
+          <p>Product name + category + keywords → AI-generated SEO description. Built as a lightweight acquisition mechanic with a clear path into Photoroom.</p>
+          <div class="tool-stack">
+            <span class="tool-stack-item">HTML/JS</span>
+            <span class="tool-stack-item">n8n webhook</span>
+            <span class="tool-stack-item">Claude</span>
+          </div>
+        </div>
       </div>
-      <div class="system-card">
-        <div class="system-card-icon" style="background:#eef4ff">🎯</div>
-        <h3>Experiment Backlog</h3>
-        <p>ICE scoring with auto-calculated priority. Formula: Impact × Confidence × Ease. Status: Idea → In Review → Approved → triggers Active Experiments.</p>
-        <div class="tech-row"><span class="tech-tag">Notion Formula</span><span class="tech-tag">ICE scoring</span></div>
+
+      <div class="tool-card">
+        <div class="tool-preview">
+          <img src="images/tool-product-copy-generator.png" alt="Product Copy Generator screenshot" onclick="openLightbox(this.src)">
+        </div>
+        <div class="tool-body">
+          <h3>Product Copy Generator</h3>
+          <p>Product URL → SEO description, ad copy, social caption and listing copy. Built to reduce friction for merchants and surface product value quickly.</p>
+          <div class="tool-stack">
+            <span class="tool-stack-item">HTML/JS</span>
+            <span class="tool-stack-item">n8n webhook</span>
+            <span class="tool-stack-item">JSON parsing</span>
+          </div>
+        </div>
       </div>
-      <div class="system-card">
-        <div class="system-card-icon" style="background:#fff1f7">🧪</div>
-        <h3>Active Experiments</h3>
-        <p>15-property tracking database. Trigger fields validated by n8n. Results fields auto-populated. 4 views: Pipeline, By Status (Kanban), Results, Learnings Library.</p>
-        <div class="tech-row"><span class="tech-tag">15 properties</span><span class="tech-tag">4 views</span><span class="tech-tag">Page template</span></div>
+
+      <div class="tool-card">
+        <div class="tool-preview">
+          <img src="images/tool-visual-generator.png" alt="Product Visual Generator screenshot" onclick="openLightbox(this.src)">
+        </div>
+        <div class="tool-body">
+          <h3>Product Visual Generator</h3>
+          <p>Product URL + optional upload → ad and listing mockups with watermark-driven upgrade logic. A PLG-style asset built around activation and conversion.</p>
+          <div class="tool-stack">
+            <span class="tool-stack-item">FileReader API</span>
+            <span class="tool-stack-item">3 mockups</span>
+            <span class="tool-stack-item">PLG funnel</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -414,42 +405,238 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<section style="padding:5rem 2rem;background:var(--white)">
+<!-- SHOPIFY -->
+<section id="shopify" style="background:var(--white)">
+  <div class="container">
+    <div class="section-tag">Additional experience</div>
+    <h2 class="section-title">Shipping conversion work in Shopify</h2>
+    <p class="section-desc">Beyond the portfolio system, I’ve also shipped conversion-focused UI work directly in Shopify using Liquid. These examples show live storefront implementation rather than just tooling or planning.</p>
+
+    <div class="shopify-grid">
+      <div class="shopify-card">
+        <div class="shot-label">Before 1 · Click to enlarge</div>
+        <div class="shot-title">Storefront state before widget</div>
+        <div class="shot-copy">Baseline storefront view before adding a conversion-focused component.</div>
+        <div class="shot-wrap">
+          <img src="images/shopify-before-1.png" alt="Shopify storefront before widget 1" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+      <div class="shopify-card">
+        <div class="shot-label">After 1 · Click to enlarge</div>
+        <div class="shot-title">Widget shipped into live storefront</div>
+        <div class="shot-copy">Custom Shopify widget built with Liquid and added directly into the customer-facing experience.</div>
+        <div class="shot-wrap">
+          <img src="images/shopify-after-1.png" alt="Shopify storefront after widget 1" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+      <div class="shopify-card">
+        <div class="shot-label">Before 2 · Click to enlarge</div>
+        <div class="shot-title">Second UI state before implementation</div>
+        <div class="shot-copy">Another baseline example before shipping the new storefront element.</div>
+        <div class="shot-wrap">
+          <img src="images/shopify-before-2.png" alt="Shopify storefront before widget 2" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+      <div class="shopify-card">
+        <div class="shot-label">After 2 · Click to enlarge</div>
+        <div class="shot-title">Second widget implementation live</div>
+        <div class="shot-copy">A second shipped example showing product-adjacent execution beyond experimentation tooling.</div>
+        <div class="shot-wrap">
+          <img src="images/shopify-after-2.png" alt="Shopify storefront after widget 2" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIMENTS -->
+<section id="experiments">
+  <div class="container">
+    <div class="section-tag">Strategy</div>
+    <h2 class="section-title">50 prioritised growth bets</h2>
+    <p class="section-desc">I also built a broader experiment pipeline across acquisition, conversion, retention and PLG. Instead of listing all 50 inline, I’m surfacing a representative sample of the highest-signal ideas I’d prioritise first.</p>
+
+    <div class="exp-summary-grid">
+      <div class="exp-mini-card">
+        <div class="exp-mini-top">
+          <div class="exp-mini-icon">🔍</div>
+          <h3>Programmatic SEO pages per product category</h3>
+        </div>
+        <p>Scale long-tail acquisition with targeted category pages built around seller intent and marketplace-specific problems.</p>
+        <div class="exp-meta">
+          <div class="exp-tags">
+            <span class="exp-tag">Acquisition</span>
+            <span class="exp-tag">SEO</span>
+          </div>
+          <span class="exp-score">ICE 756</span>
+        </div>
+      </div>
+
+      <div class="exp-mini-card">
+        <div class="exp-mini-top">
+          <div class="exp-mini-icon">📝</div>
+          <h3>Free AI SEO product description generator</h3>
+        </div>
+        <p>Use a lightweight free tool as an acquisition wedge to attract merchants, create immediate value, and route them into the product.</p>
+        <div class="exp-meta">
+          <div class="exp-tags">
+            <span class="exp-tag">Acquisition</span>
+            <span class="exp-tag">SEO</span>
+            <span class="exp-tag">Tool</span>
+          </div>
+          <span class="exp-score">ICE 630</span>
+        </div>
+      </div>
+
+      <div class="exp-mini-card">
+        <div class="exp-mini-top">
+          <div class="exp-mini-icon">🤝</div>
+          <h3>Shopify App Store listing optimisation</h3>
+        </div>
+        <p>Improve screenshots, messaging and keyword alignment on an already high-intent channel to unlock compounding organic acquisition.</p>
+        <div class="exp-meta">
+          <div class="exp-tags">
+            <span class="exp-tag">Acquisition</span>
+            <span class="exp-tag">PLG</span>
+          </div>
+          <span class="exp-score">ICE 672</span>
+        </div>
+      </div>
+
+      <div class="exp-mini-card">
+        <div class="exp-mini-top">
+          <div class="exp-mini-icon">🎁</div>
+          <h3>Upsell prompt after 3rd free export</h3>
+        </div>
+        <p>Introduce a monetisation moment after repeated value delivery, testing copy and timing at a naturally high-intent point.</p>
+        <div class="exp-meta">
+          <div class="exp-tags">
+            <span class="exp-tag">Conversion</span>
+            <span class="exp-tag">PLG</span>
+          </div>
+          <span class="exp-score">ICE 630</span>
+        </div>
+      </div>
+
+      <div class="exp-mini-card">
+        <div class="exp-mini-top">
+          <div class="exp-mini-icon">🖱</div>
+          <h3>One-click background removal as lead gen</h3>
+        </div>
+        <p>Reduce signup friction by letting users experience core product value first, then convert after the “aha” moment.</p>
+        <div class="exp-meta">
+          <div class="exp-tags">
+            <span class="exp-tag">Conversion</span>
+            <span class="exp-tag">PLG</span>
+          </div>
+          <span class="exp-score">ICE 756</span>
+        </div>
+      </div>
+
+      <div class="exp-mini-card">
+        <div class="exp-mini-top">
+          <div class="exp-mini-icon">🎁</div>
+          <h3>Refer-a-seller referral loop</h3>
+        </div>
+        <p>Create a viral mechanic tailored to seller communities by rewarding both the referrer and the invited merchant.</p>
+        <div class="exp-meta">
+          <div class="exp-tags">
+            <span class="exp-tag">Viral</span>
+            <span class="exp-tag">Acquisition</span>
+          </div>
+          <span class="exp-score">ICE 588</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--muted);margin-top:1rem;">
+      Full experiment library built separately with 50 prioritised ideas across acquisition, conversion, retention, viral / PLG and partnerships. :contentReference[oaicite:1]{index=1}
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SYSTEM -->
+<section id="system" style="background:var(--white)">
+  <div class="container">
+    <div class="section-tag">Ops infrastructure</div>
+    <h2 class="section-title">The system behind fast experimentation</h2>
+    <p class="section-desc">To support fast growth execution, I built an operating system that moves ideas into backlog, backlog into active experiments, and active experiments into measurable outcomes.</p>
+
+    <div class="system-grid">
+      <div class="system-card">
+        <div class="system-card-icon" style="background:#ece8ff">💡</div>
+        <h3>Idea Library</h3>
+        <p>Free-form idea capture with funnel-stage tagging and a direct handoff into the experiment pipeline when an idea is ready to move.</p>
+        <div class="tech-row"><span class="tech-tag">Notion API</span><span class="tech-tag">Idea intake</span></div>
+      </div>
+
+      <div class="system-card">
+        <div class="system-card-icon" style="background:#eef4ff">🎯</div>
+        <h3>Experiment Backlog</h3>
+        <p>ICE-based prioritisation layer used to rank, review and approve experiments before they move into active execution.</p>
+        <div class="tech-row"><span class="tech-tag">ICE scoring</span><span class="tech-tag">Prioritisation</span></div>
+      </div>
+
+      <div class="system-card">
+        <div class="system-card-icon" style="background:#fff1f7">🧪</div>
+        <h3>Growth Experiments</h3>
+        <p>Execution database with structured properties for owner, KPI, stage, launch readiness, results and learnings.</p>
+        <div class="tech-row"><span class="tech-tag">15 properties</span><span class="tech-tag">Launch tracking</span><span class="tech-tag">Results</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLOWS -->
+<section>
   <div class="container">
     <div class="section-tag">Automation</div>
     <h2 class="section-title">4 n8n workflows — fully automated</h2>
-    <p class="section-desc">Every handoff between systems is automated. No manual status updates, no missed experiments.</p>
+    <p class="section-desc">The operational layer removes manual handoffs and keeps experiment execution moving. This is the infrastructure I’d want in place to move quickly as a growth marketer.</p>
+
     <div class="flows-list">
       <div class="flow-item">
         <div class="flow-num">1</div>
         <div class="flow-content">
           <h4>Idea Library → Experiment Backlog</h4>
-          <p>Trigger: "Move to Backlog" checkbox = true. Auto-creates Backlog entry with mapped fields (Hypothesis, Funnel Stage, Status = Idea). Polling: every 1 min.</p>
-          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Filter node</span><span class="flow-tag">HTTP POST /v1/pages</span></div>
+          <p>Selected ideas move automatically into backlog with mapped fields like hypothesis, funnel stage and initial status.</p>
+          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Filter node</span><span class="flow-tag">HTTP POST</span></div>
         </div>
       </div>
+
       <div class="flow-item">
         <div class="flow-num">2</div>
         <div class="flow-content">
           <h4>Backlog Approved → Active Experiments</h4>
-          <p>Trigger: Status = "Approved". One automation creates the active experiment record, while the intake validation layer ensures required launch fields are complete before the experiment can move live.</p>
-          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Validation layer</span><span class="flow-tag">HTTP POST /v1/pages</span></div>
+          <p>Once approved, backlog items create active experiment entries and move into execution with the right metadata already in place.</p>
+          <div class="flow-tags"><span class="flow-tag">Notion Trigger</span><span class="flow-tag">Automation</span><span class="flow-tag">Execution handoff</span></div>
         </div>
       </div>
+
       <div class="flow-item">
         <div class="flow-num">3</div>
         <div class="flow-content">
           <h4>Intake Validator + Email</h4>
-          <p>Trigger: any update to Active Experiments. If-node: checks 8 required fields (Hypothesis, Primary KPI, Funnel Stage, Review Date, Status not in terminal states). True: Status → "Ready to Launch". False: Status → "Needs Info" + Gmail email to owner with missing fields.</p>
-          <div class="flow-tags"><span class="flow-tag">If node (8 conditions)</span><span class="flow-tag">Notion Update</span><span class="flow-tag">Gmail OAuth2</span><span class="flow-tag">Google Cloud Console</span></div>
+          <p>Validation logic checks required launch fields and flags incomplete setups before experiments go live, with automated owner notifications.</p>
+          <div class="flow-tags"><span class="flow-tag">If node</span><span class="flow-tag">Validation layer</span><span class="flow-tag">Gmail</span></div>
         </div>
       </div>
+
       <div class="flow-item">
         <div class="flow-num">4</div>
         <div class="flow-content">
           <h4>GrowthBook → Notion Sync</h4>
-          <p>Schedule trigger (every 5 min). GET GrowthBook API /api/v1/experiments. Code node extracts experiment ID, name, status. POST Notion database query to find matching entry by name. PATCH Notion page: Status = "Running", GrowthBook ID, Start Date = now.</p>
-          <div class="flow-tags"><span class="flow-tag">Schedule Trigger</span><span class="flow-tag">GrowthBook API</span><span class="flow-tag">Code (JS)</span><span class="flow-tag">Notion query + patch</span></div>
+          <p>Experiment status and metadata sync back from GrowthBook into Notion to keep the operating system aligned with what is actually running.</p>
+          <div class="flow-tags"><span class="flow-tag">GrowthBook API</span><span class="flow-tag">Code node</span><span class="flow-tag">Notion patch</span></div>
         </div>
       </div>
     </div>
@@ -458,23 +645,21 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
+<!-- PROOF -->
 <section id="proof" class="visual-section">
   <div class="container">
     <div class="section-tag">System in action</div>
     <h2 class="section-title">Visual proof of the workflow</h2>
-    <p class="section-desc">From idea capture to automation to funnel visibility — these are the actual systems I built, not mockups.</p>
+    <p class="section-desc">These are the actual systems and dashboards behind the portfolio: Notion for workflow, n8n for orchestration, and Amplitude for funnel visibility.</p>
 
     <div class="visual-group">
       <div class="visual-group-head">
-        <div>
-          <h3 class="visual-group-title">Notion — Growth operating system</h3>
-          <p class="visual-group-copy">Three connected databases that move ideas into prioritised backlog items and then into active experiments.</p>
-        </div>
+        <h3 class="visual-group-title">Notion — Growth operating system</h3>
+        <p class="visual-group-copy">Three connected databases that move ideas into prioritised backlog items and then into active experiments.</p>
       </div>
-
       <div class="visual-grid">
         <div class="visual-card">
-          <div class="visual-label">Database 1 · Click to enlarge</div>
+          <div class="shot-label">Database 1 · Click to enlarge</div>
           <h4>Idea Library</h4>
           <p>Free-form idea capture with funnel-stage tagging and a direct handoff into the experiment pipeline.</p>
           <div class="visual-shot-wrap">
@@ -483,7 +668,7 @@ footer p{font-size:.82rem}
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Database 2 · Click to enlarge</div>
+          <div class="shot-label">Database 2 · Click to enlarge</div>
           <h4>Experiment Backlog</h4>
           <p>ICE-based prioritisation layer used to review, rank and approve experiments before launch.</p>
           <div class="visual-shot-wrap">
@@ -492,7 +677,7 @@ footer p{font-size:.82rem}
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Database 3 · Click to enlarge</div>
+          <div class="shot-label">Database 3 · Click to enlarge</div>
           <h4>Growth Experiments</h4>
           <p>Launch-ready execution database with structured fields for owners, KPI tracking, statuses and learnings.</p>
           <div class="visual-shot-wrap">
@@ -504,15 +689,13 @@ footer p{font-size:.82rem}
 
     <div class="visual-group">
       <div class="visual-group-head">
-        <div>
-          <h3 class="visual-group-title">n8n — Automation layer</h3>
-          <p class="visual-group-copy">The workflows below show how ideas move automatically between databases, how intake is validated, and how experiment status is synced back from GrowthBook.</p>
-        </div>
+        <h3 class="visual-group-title">n8n — Automation layer</h3>
+        <p class="visual-group-copy">The workflows show how ideas move automatically between systems, how launch intake is validated, and how experiments stay synced.</p>
       </div>
 
       <div class="visual-grid two-col">
         <div class="visual-card">
-          <div class="visual-label">Workflow 1 · Click to enlarge</div>
+          <div class="shot-label">Workflow 1 · Click to enlarge</div>
           <h4>Idea Library → Experiment Backlog</h4>
           <p>Moves selected ideas into the backlog and maps the core experiment fields automatically.</p>
           <div class="visual-shot-wrap">
@@ -521,16 +704,16 @@ footer p{font-size:.82rem}
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Workflow 2 · Click to enlarge</div>
+          <div class="shot-label">Workflow 2 · Click to enlarge</div>
           <h4>Backlog Approved → Active Experiments (Intake Validator)</h4>
-          <p>Checks required launch inputs and flags incomplete experiment setups before they go live.</p>
+          <p>Checks required launch inputs and flags incomplete setups before they go live.</p>
           <div class="visual-shot-wrap">
             <img src="images/n8n-flow-intake-validator.png" alt="n8n workflow intake validator" class="visual-shot" onclick="openLightbox(this.src)">
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Workflow 3 · Click to enlarge</div>
+          <div class="shot-label">Workflow 3 · Click to enlarge</div>
           <h4>Backlog Approved → Active Experiments (Growth Experiments)</h4>
           <p>Creates the active experiment record once a backlog item is approved and ready to enter execution.</p>
           <div class="visual-shot-wrap">
@@ -539,7 +722,7 @@ footer p{font-size:.82rem}
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Workflow 4 · Click to enlarge</div>
+          <div class="shot-label">Workflow 4 · Click to enlarge</div>
           <h4>GrowthBook → Notion Sync</h4>
           <p>Keeps experiment metadata aligned between GrowthBook and Notion so execution status stays accurate.</p>
           <div class="visual-shot-wrap">
@@ -551,15 +734,13 @@ footer p{font-size:.82rem}
 
     <div class="visual-group">
       <div class="visual-group-head">
-        <div>
-          <h3 class="visual-group-title">Amplitude — PLG funnel visibility</h3>
-          <p class="visual-group-copy">The dashboard layer translates the experimentation system into measurable funnel visibility and activation insights.</p>
-        </div>
+        <h3 class="visual-group-title">Amplitude — PLG funnel visibility</h3>
+        <p class="visual-group-copy">The analytics layer translates the experimentation system into funnel visibility and activation insight.</p>
       </div>
 
       <div class="visual-grid two-col">
         <div class="visual-card">
-          <div class="visual-label">Dashboard 1 · Click to enlarge</div>
+          <div class="shot-label">Dashboard 1 · Click to enlarge</div>
           <h4>PLG Funnel Overview</h4>
           <p>Top-level view of activation and drop-off points to identify where growth effort should be focused first.</p>
           <div class="visual-shot-wrap">
@@ -568,7 +749,7 @@ footer p{font-size:.82rem}
         </div>
 
         <div class="visual-card">
-          <div class="visual-label">Dashboard 2 · Click to enlarge</div>
+          <div class="shot-label">Dashboard 2 · Click to enlarge</div>
           <h4>Activation / Conversion Detail</h4>
           <p>A deeper breakdown used to isolate bottlenecks, evaluate experiment impact and inform prioritisation.</p>
           <div class="visual-shot-wrap">
@@ -582,125 +763,47 @@ footer p{font-size:.82rem}
 
 <div class="divider"></div>
 
-<section id="tools">
-  <div class="container">
-    <div class="section-tag">Growth assets</div>
-    <h2 class="section-title">3 free tools — built to convert</h2>
-    <p class="section-desc">Each tool delivers immediate value to Photoroom's SMB audience and drives users into the app. Zero friction, instant Aha moment.</p>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-preview">
-          <img src="images/tool-seo-generator.png" alt="SEO Description Generator screenshot" onclick="openLightbox(this.src)">
-        </div>
-        <div class="tool-body">
-          <h3>SEO Description Generator</h3>
-          <p>Product name + category + keywords → AI-generated SEO meta description. n8n webhook backend with Claude Sonnet. Photoroom CTA embedded.</p>
-          <div class="tool-stack">
-            <span class="tool-stack-item">HTML/JS</span>
-            <span class="tool-stack-item">n8n webhook</span>
-            <span class="tool-stack-item">Anthropic node</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-preview">
-          <img src="images/tool-product-copy-generator.png" alt="Product Copy Generator screenshot" onclick="openLightbox(this.src)">
-        </div>
-        <div class="tool-body">
-          <h3>Product Copy Generator</h3>
-          <p>Product URL → SEO description, Meta ad copy, Instagram caption, eBay/Amazon listing. Claude extracts product info from URL and returns structured JSON. API key secured in n8n backend.</p>
-          <div class="tool-stack">
-            <span class="tool-stack-item">HTML/JS</span>
-            <span class="tool-stack-item">n8n webhook</span>
-            <span class="tool-stack-item">JSON parsing</span>
-            <span class="tool-stack-item">4 copy cards</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-preview">
-          <img src="images/tool-visual-generator.png" alt="Product Visual Generator screenshot" onclick="openLightbox(this.src)">
-        </div>
-        <div class="tool-body">
-          <h3>Product Visual Generator</h3>
-          <p>Product URL + optional image upload → Instagram Ad, Facebook Ad, eBay listing mockups with watermark + generated copy. PLG mechanic: watermark drives upgrade to Photoroom.</p>
-          <div class="tool-stack">
-            <span class="tool-stack-item">FileReader API</span>
-            <span class="tool-stack-item">3 mockups</span>
-            <span class="tool-stack-item">Watermark CTA</span>
-            <span class="tool-stack-item">PLG funnel</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="experiments" style="background:var(--white);padding:5rem 2rem">
-  <div class="container">
-    <div class="section-tag">Strategy</div>
-    <h2 class="section-title">50 prioritised growth bets</h2>
-    <p class="section-desc">A focused experiment pipeline across acquisition, conversion, retention, viral and PLG — prioritised by ICE score and built to ship fast.</p>
-    <div class="exp-preview">
-      <div class="exp-preview-header">
-        <h3>Experiments by channel</h3>
-        <span class="exp-count-badge">50 total</span>
-      </div>
-      <div class="exp-channels">
-        <div class="exp-channel"><div class="ch-num">18</div><div class="ch-label">Acquisition</div></div>
-        <div class="exp-channel"><div class="ch-num">12</div><div class="ch-label">Conversion</div></div>
-        <div class="exp-channel"><div class="ch-num">8</div><div class="ch-label">Retention</div></div>
-        <div class="exp-channel"><div class="ch-num">7</div><div class="ch-label">Viral / PLG</div></div>
-        <div class="exp-channel"><div class="ch-num">5</div><div class="ch-label">Partnerships</div></div>
-      </div>
-    </div>
-    <p style="font-size:.82rem;color:var(--muted);margin-top:.8rem;">Top experiments by ICE score: Programmatic SEO pages per product category (756) · Upsell prompt after 3rd export (630) · Shopify App Store listing optimisation (672) · One-click background removal as lead gen (756)</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
+<!-- 90 DAYS -->
 <section id="90days">
   <div class="container">
     <div class="section-tag">Plan</div>
     <h2 class="section-title">First 90 days</h2>
-    <p class="section-desc">How I'd approach the role from day one — focused on learning first, building second.</p>
+    <p class="section-desc">How I’d approach the role from day one — learning fast, shipping early, and building a reliable cadence around experimentation.</p>
+
     <div class="days-grid">
       <div class="day-card">
         <div class="day-label">Days 1–30</div>
         <h3>Learn & audit</h3>
         <ul class="day-items">
           <li>Audit current Amplitude event taxonomy and tracking gaps</li>
-          <li>Map full PLG funnel: where do users drop off today?</li>
-          <li>Interview 5 SMB customers to understand their workflow</li>
-          <li>Review top 10 existing experiments and learnings</li>
-          <li>Identify top 3 quick-win acquisition channels</li>
+          <li>Map the PLG funnel and identify key drop-off points</li>
+          <li>Interview SMB customers to understand real workflows</li>
+          <li>Review existing growth learnings and channel performance</li>
+          <li>Identify the fastest acquisition and activation opportunities</li>
         </ul>
       </div>
+
       <div class="day-card">
         <div class="day-label">Days 31–60</div>
         <h3>Build & launch</h3>
         <ul class="day-items">
-          <li>Ship first 10 experiments from backlog</li>
-          <li>Launch programmatic SEO pages for top 5 product categories</li>
-          <li>Deploy upsell prompt A/B test (3rd export trigger)</li>
-          <li>Build activation dashboard in Amplitude</li>
-          <li>Establish weekly experiment review cadence</li>
+          <li>Ship the first wave of prioritised experiments</li>
+          <li>Launch initial SEO / PLG acquisition bets</li>
+          <li>Deploy the first monetisation and upsell experiments</li>
+          <li>Build an activation dashboard in Amplitude</li>
+          <li>Establish a weekly experiment review cadence</li>
         </ul>
       </div>
+
       <div class="day-card">
         <div class="day-label">Days 61–90</div>
         <h3>Scale winners</h3>
         <ul class="day-items">
-          <li>Double down on top 3 performing experiments</li>
-          <li>Launch referral loop for reseller segment</li>
-          <li>Ship Shopify / WooCommerce integration</li>
-          <li>Present first monthly growth report with attribution data</li>
-          <li>Build 10+ experiments/month cadence</li>
+          <li>Double down on the top-performing experiments</li>
+          <li>Launch a referral or reseller growth loop</li>
+          <li>Explore Shopify / WooCommerce integration leverage</li>
+          <li>Present the first full growth readout with attribution context</li>
+          <li>Build toward a repeatable 10+ experiments / month cadence</li>
         </ul>
       </div>
     </div>
